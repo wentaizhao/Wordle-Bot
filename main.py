@@ -192,6 +192,7 @@ def exit_game():
 
 wait_popup_close()  # must close popup manually
 
+print()
 print(f'First guess: {guess}')
 print()
 
@@ -206,12 +207,13 @@ for attempt in range(1, 7):
     possible_words = get_new_possible_words(attempt)
     impossible_words = get_new_impossible_words()
     print(f'AFTER ATTEMPT {attempt}')
-    print(f'Possible words: {possible_words}')
-    print(f'Test words: {impossible_words}')
-    print(f'Safe letters: {safe_letters}')
+    print(f'Possible words:\n\t {possible_words}')
+    print(f'Test words:\n\t {impossible_words}')
+    print(f'Safe letters:\n\t {safe_letters}')
     guess = get_new_word(attempt)
     print(f'Next guess: {guess}')
     print()
 
 print(f'Remaining possible words: {possible_words}')
 exit_game()
+
