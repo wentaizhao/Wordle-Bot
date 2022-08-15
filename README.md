@@ -25,7 +25,8 @@ Once downloaded, extract the file (For Windows the name is `chromedriver.exe`).
 Copy the path of the extracted file to `constants.py` and replace the text with the path where indicated. Save `constants.py`.
 
 ### 5. Run the bot
-Copy the path of `main.py`. In the command prompt enter `python`. When you see `>>>`, enter the copied path of `main.py`.
+Copy the path of `main.py`. In the command prompt type `cd` followed by a `SPACE` and your copied path  
+(e.g. `cd C:\Users\username\projects\Wordle-Bot-main`). Press `ENTER`. Type `main.py` and press `ENTER`.
 
 ### 6. One last step
 When the Wordle website is loaded, close the popup to begin and follow any instructions in the command prompt. Have fun!
