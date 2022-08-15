@@ -18,16 +18,13 @@ Follow instructions at https://www.python.org/downloads/
 In the command prompt enter `pip install selenium`
 
 ### 3. Download ChromeDriver for your system
-https://chromedriver.chromium.org/downloads
-Once downloaded, extract the file (For Windows the name is `chromedriver.exe`).
+Go to https://chromedriver.chromium.org/downloads. Once downloaded, extract the file (For Windows the name is `chromedriver.exe`). Move it somewhere safe.
 
 ### 4. Set ChromeDriver path
-Copy the path of the extracted file to `constants.py` and replace the text with the path where indicated. Save `constants.py`.
+Copy the path of the extracted file. Right click `constants.py` and open with notepad. Replace the text with the path where indicated. Save `constants.py` and close.
 
 ### 5. Run the bot
-Copy the path of `main.py`. In the command prompt type `cd` followed by a `SPACE` and your copied path  
-(e.g. `cd C:\Users\username\projects\Wordle-Bot-main`). Press `ENTER`. Type `main.py` and press `ENTER`.
+Double click `main.py`
 
 ### 6. One last step
 When the Wordle website is loaded, close the popup to begin and follow any instructions in the command prompt. Have fun!
-
