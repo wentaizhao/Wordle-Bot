@@ -22,10 +22,10 @@ Search `cmd` in the Windows search bar. In the command prompt enter `pip install
 Go to https://chromedriver.chromium.org/downloads. Once downloaded, extract the file named `chromedriver.exe`. Move it somewhere safe.
 
 ### 4. Set ChromeDriver path
-Copy the path of `chromedriver.exe` (e.g. "C:\username\projects\chromedriver.exe"). Right click `constants.py` >>> Open with >>> Notepad. Replace the text with the path where indicated. Save `constants.py` and close.
+Copy the path of `chromedriver.exe` (e.g. `C:\username\projects\chromedriver.exe`). Right click `constants.py` >>> Open with >>> Notepad. Replace the text with the path where indicated. Save `constants.py` and close.
 
 ### 5. Run the bot
 Double click `main.py`.
 
 ### 6. One last step
-When the Wordle website is loaded, close the popup to begin and follow any instructions in the command prompt. Have fun!
+When the Wordle website is loaded, close the popup on the website to begin and follow any instructions in the command prompt. Have fun!
