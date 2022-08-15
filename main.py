@@ -38,7 +38,9 @@ scores = {'e': 1.23, 'a': 0.975, 'r': 0.897, 'o': 0.753, 't': 0.729, 'l': 0.716,
 # result from letter_frequency.py
 
 s = Service(executable_path=DRIVER_PATH)
-driver = webdriver.Chrome(service=s)
+options = webdriver.ChromeOptions()
+options.add_experimental_option('excludeSwitches', ['enable-logging'])
+driver = webdriver.Chrome(service=s, options=options)
 driver.get('https://www.nytimes.com/games/wordle/index.html')
 
 guess = 'trace'  # first guess
@@ -192,7 +194,6 @@ def exit_game():
 
 wait_popup_close()  # must close popup manually
 
-print()
 print(f'First guess: {guess}')
 print()
 
