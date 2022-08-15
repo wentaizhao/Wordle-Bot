@@ -1,4 +1,4 @@
-DRIVER_PATH = DRIVER_PATH
+DRIVER_PATH = 'REPLACE THIS TEXT WITH PATH. KEEP SINGLE QUOTES'
 
 BUTTONS = {
     'Q': '//*[@id=\"wordle-app-game\"]/div[2]/div[1]/button[1]',
