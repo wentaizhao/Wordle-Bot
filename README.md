@@ -9,6 +9,8 @@ Click the green `Code` button and in the dropdown click `Download ZIP`. Once dow
 
 ![image](https://user-images.githubusercontent.com/110541688/184663292-fe3f6e2a-7d90-4710-99b9-fbb3f085c100.png)
 
+## UPDATE 01.15.2024
+Selenium has recently been updated. As of the time of this update, only steps 1, 5, and 6 must be run.
 
 ## Setup and Instructions
 _For Windows. Mac should follow similar process_
