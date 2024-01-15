@@ -1,9 +1,10 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import ElementClickInterceptedException
+from selenium.common.exceptions import ElementClickInterceptedException, NoSuchElementException
 import time
-from constants import DRIVER_PATH, BUTTONS
+from constants import BUTTONS, SCORES
+from webdriver_manager.chrome import ChromeDriverManager
 
 with open('words.txt', 'r') as f:
     lines = f.readlines()
@@ -32,15 +33,7 @@ impossible_words = remove_dup_let_words(all_words)  # get more info without dupe
 
 safe_letters = []
 
-scores = {'e': 1.23, 'a': 0.975, 'r': 0.897, 'o': 0.753, 't': 0.729, 'l': 0.716, 'i': 0.67, 's': 0.668, 'n': 0.573,
-          'c': 0.475, 'u': 0.466, 'y': 0.424, 'd': 0.393, 'h': 0.387, 'p': 0.365, 'm': 0.316, 'g': 0.31, 'b': 0.28,
-          'f': 0.229, 'k': 0.21, 'w': 0.194, 'v': 0.152, 'z': 0.04, 'x': 0.037, 'q': 0.029, 'j': 0.027}
-# result from letter_frequency.py
-
-s = Service(executable_path=DRIVER_PATH)
-options = webdriver.ChromeOptions()
-options.add_experimental_option('excludeSwitches', ['enable-logging'])
-driver = webdriver.Chrome(service=s, options=options)
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 driver.get('https://www.nytimes.com/games/wordle/index.html')
 
 guess = 'trace'  # first guess
@@ -50,10 +43,11 @@ def wait_popup_close():
     is_true = True
     while is_true:
         try:
+            print("close popups");
             temp = driver.find_element(By.XPATH, BUTTONS['BACK'])
             temp.click()
             is_true = False
-        except ElementClickInterceptedException:
+        except (NoSuchElementException, ElementClickInterceptedException):
             time.sleep(1)
 
 
@@ -158,8 +152,8 @@ def get_info_word(words):
         score = 0
         for i in range(5):
             let = word[i]
-            score += scores[let]
-        if score > high_score:
+            score += SCORES[let]
+        if score - high_score > 0.001:
             high_score = score
             best_word = word
     return best_word
@@ -168,7 +162,6 @@ def get_info_word(words):
 def get_new_word(row):
     if len(possible_words) <= 6 - row:
         return get_info_word(possible_words)
-        # return possible_words[0]
     else:
         try:
             return get_info_word(impossible_words)
@@ -190,7 +183,6 @@ def exit_game():
     driver.quit()
     print('COMPLETE')
     raise SystemExit
-
 
 wait_popup_close()  # must close popup manually
 

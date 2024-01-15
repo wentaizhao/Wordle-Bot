@@ -1,5 +1,3 @@
-DRIVER_PATH = 'REPLACE THIS TEXT WITH PATH. KEEP SINGLE QUOTES'
-
 BUTTONS = {
     'Q': '//*[@id=\"wordle-app-game\"]/div[2]/div[1]/button[1]',
     'W': '//*[@id=\"wordle-app-game\"]/div[2]/div[1]/button[2]',
@@ -32,3 +30,7 @@ BUTTONS = {
     'M': '//*[@id=\"wordle-app-game\"]/div[2]/div[3]/button[8]',
     'BACK': '//*[@id=\"wordle-app-game\"]/div[2]/div[3]/button[9]'
 }
+
+SCORES = {'e': 1.23, 'a': 0.975, 'r': 0.897, 'o': 0.753, 't': 0.729, 'l': 0.716, 'i': 0.67, 's': 0.668, 'n': 0.573,
+          'c': 0.475, 'u': 0.466, 'y': 0.424, 'd': 0.393, 'h': 0.387, 'p': 0.365, 'm': 0.316, 'g': 0.31, 'b': 0.28,
+          'f': 0.229, 'k': 0.21, 'w': 0.194, 'v': 0.152, 'z': 0.04, 'x': 0.037, 'q': 0.029, 'j': 0.027}
